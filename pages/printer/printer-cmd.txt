@@ -1,0 +1,22 @@
+
+=>PRINT_TEXT_CENTER->市综合法局
+=>PRINT_TEXT_CENTER->行政处罚事先告知单
+=>PRINT_TEXT_CENTER->楚城综行处告字〔2024〕第000001号
+=>PRINT_TEXT_LEFT->张三：
+=>PRINT_TEXT_LEFT->   经查，你于2024年05月13日16时35分雄师范学院因损毁城市树木的行为，违反了《****规划建设管条例》第****列破坏园林绿化的行为:侵占、毁损公共绿地、树木、水体、绿化设施”的规定。以上事实有执****照片证。按照《中****定，该违法信息已经通过执法终端上传至指挥*******有下列行为之一的，由城市管****予以处罚：违反第三十一条规定的，责令****款；情节较****元以上****元以上2万元以下罚款；造成损失的****定，本机关拟****
+=>PRINT_TEXT_LEFT->   1、立即****（人民****的行政处罚。
+=>PRINT_TEXT_LEFT->   如对****不申请陈述申辩的，视为放弃上述权利。请持****下地点进行办理：
+ =>PRINT_TEXT_BOLD_LEFT->   楚雄市****2****
+ =>PRINT_TEXT_LEFT_BOLD->   如对处罚无异****自行处理，并签字****。****，请再次扫****。
+ // 此处打印二维码
+ =>PRINT_IMAGE_DATA_URL_H184_W184_CENTER->/public/test-image-data-json-array-qrcode.json
+ =>PRINT_TEXT_CENTER->违****
+ //打印图片
+ =>PRINT_IMAGE_DATA_URL_H160_W360_RIGHT->/public/test-image-data-json-array-sign.json
+ =>PRINT_TEXT_LEFT->执法人员及执法证号****
+ =>PRINT_TEXT_LEFT->执法人员及执法证号****2）
+ =>PRINT_TEXT_LEFT->本机关地址****公区
+ =>PRINT_TEXT_LEFT->注：收到本告****律规定加处罚款。
+  =>PRINT_TEXT_LEFT->  
+ =>PRINT_TEXT_LEFT->  
+  =>PRINT_TEXT_LEFT->  
