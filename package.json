@@ -1,0 +1,19 @@
+{
+  "name": "tprintor",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.10.18",
+    "buffer": "^6.0.3",
+    "minapp-canvas-utils": "^1.0.3",
+    "moment": "^2.29.4",
+    "text-encoding": "^0.7.0",
+    "to-array-buffer": "^3.2.0"
+  }
+}

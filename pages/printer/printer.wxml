@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<!-- 
+
+<canvas style="z-index: 124; width: {{printerImageConfig.width*dpr}}px;position: fixed;left: -0%; height: {{printerImageConfig.height*dpr}}px;background: red;top: 0;" id="canvas" type="2d" canvas-id="canvas"></canvas>
+ -->
+
+<view class="index-device-card">
+  <view class="flex-between">
+    <text>设备列表</text>
+  </view>
+
+  <view class="index-device-list">
+
+    <view wx:if="{{deviceList.length == 0}}" style="text-align: center;">
+      暂无可用设备
+    </view>
+
+    <view wx:for="{{deviceList}}" wx:key="i" class="flex-between" style="margin-top: .78em; height: 4em;padding-left: 15rpx;">
+      <view class="flex-center">
+        <image style="width: 54rpx;height: 54rpx;margin-right: 12rpx;" src="../../static/blue.png"></image>
+        <view>
+          <view style="color: black;">
+            {{item.name}}
+          </view>
+
+          <view style="font-size: small;">
+            mac:{{item.deviceId}}
+          </view>
+
+          <view style="font-size: small;">
+            信号强度:{{item.RSSI+100}}%
+          </view>
+
+        </view>
+
+      </view>
+      <van-button wx:if="{{item.deviceId == id}}" icon="success" plain custom-style="border: none;" type="primary" bindtap="disDevice">已连接</van-button>
+      <van-button wx:if="{{item.deviceId != id}}" plain custom-style="border: none;color:#1296db;" type="primary" data-item="{{item}}" bindtap="concatDevice" loading="{{isConnect && connectId==item.deviceId}}" loading-text="连接中...">连接</van-button>
+    </view>
+
+  </view>
+
+
+
+
+
+</view>
+
+
+<view class="index-history-card" style="overflow:hidden">
+
+  <view class="flex-between">
+    打印历史
+  </view>
+
+
+  <view style="height: 86%;overflow: hidden auto;">
+    <view wx:for="{{printDataList}}" wx:for-index="idx" wx:for-item="val" wx:key="idx" class="index-history-item flex-start" data-val="{{val}}" bindtap="previewPrintPaper">
+      <image src="../../static/sq.png" style="width: 54rpx;height: 54rpx;"></image>
+      <view >
+        {{val.name}}
+      </view>
+      
+    </view>
+    <view wx:if="{{printDataList.length == 0}}" style="text-align: center;">
+      暂无数据
+    </view>
+
+
+    <view wx:if="{{printDataList.length > 0}}" style="text-align: center;color: #777;font-size: small;">
+      ---仅展示最近二十条数据---
+    </view>
+  </view>
+
+
+
+</view>
+
+
+<view style="text-align: center;height: 30px;color: #999;font-size: 14px;">当前版本：{{version}}</view>
+
+
+<van-popup show="{{ showPreview }}" closeable position="center" bind:close="closePaperPreview" custom-style="height:10rem;width:80vw;overflow:hidden;">
+
+
+  <view style="margin-top: 0rpx;padding: 20rpx;flex-direction: column;" class="flex-center">
+    <view style="margin-top: 70rpx;margin-bottom: 40rpx;">
+    {{currentChosePaper.name}}
+    </view>
+    <van-button icon="orders-o" size="small" custom-style="border-radius: 16rpx" bindtap="toWriteSqPrint" type="warning">打印单据</van-button>
+  </view>
+
+</van-popup>
+
+
+
+
+
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" />
